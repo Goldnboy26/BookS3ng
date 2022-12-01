@@ -1,81 +1,70 @@
-# mern-book-search - July 12th 2022 - Carlos Sabbah
+# Google Book Search MERN Stack Challenge
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+## Summary
 
-## Table of Contents
+Usage of Google Books API to create an Graql API with Apollo Server. MERN stack is implemented to create the app. User can sign up and log in for an account, search for a book of their liking and added to a list of saved books, users can also remove the saved books.
 
-- [Description](#Description)
-- [Installation](#Installation)
-- [Local Usage](#Local-Usage)
-- [Links](#Links)
-- [Questions](#Questions)
-- [License](#License)
+## Tools Used
 
-##
+* JavaScript
+* Node.js
+* Express
+* React
+* Apollo Server
+* Graphql
+* Mongodb
+* Mongoose
+* Dotenv
+* Heroku
 
-## Description
 
-This MERN stack application is a multi page book search engine that allows users to search up books, view their detailed information and save them (which they can view in the saved books page). Using Apollo Client, MongoDB and Mongoose, all transactions made are stored accordingly with high level authentication via tokens and JTW-decode to allow for secure access and unique data specific to each users.
 
-## Installation
+# Snapshot
 
-1. To install application, clone the main project via the HTTP or SSH link on github.
+[![Book Search](images/BookSearchDemo.png)]
 
-```
-git clone
-```
 
-2. Once cloned, open the project folder in your text editor and run the following command in terminal to install all dependencies.
-   Important note - You will need to run the below command in the 'root', 'client' and 'server' directory paths.
 
-```
-npm install
-```
 
-## Local-Usage
+# Table of Contents 
+* [Summary](#Summary)
+* [Tools Used](#Tools)
+* [Snapshot](#Snapshot)
+* [Installation & Database SetUp](#Installation)
+* [Heroku](#Heroku)
+* [License](#license)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#questions)
 
-To view the application in your local browser, cd into the root directory path and run this in terminal:
+# Installation & Database SetUp
+* To use this app npm init has to be called to create your package.json file.
+* The following necessary Npm dependencies must be installed to run the application properly: the needed dependencies will be found on the package.json file.
+* To properly install the database you must create at cluster on Mongodb atlas.
+* Run "npm start" for the port to start listening with mongoose.
+* This app is deployed on Heroku
 
-```
-npm run develop
-```
 
-## Links
 
-[Link to live application](https://boiling-hamlet-57856.herokuapp.com/)
 
-## Built With
+# Heroku
 
-- React
-- Apollo Client
-- GraphQL
-- Json web token
-- Jwt-decode
-- MongoDB
-- Mongoose
-- React-bootstrap
-- Bootstrap
-- Express
-- Node.js
-- Bcrypt
-- Faker
-- localStorage
-- JSX / JavaScript
-- HTML
-- CSS
 
-## Questions
+(https://book-search-challenge-21-mern.herokuapp.com/)
 
-[My portfolio](https://csabbah.github.io/Carlos-Sabbah-portfolio/)
 
-To view my other repositories:
-[Github](https://github.com/csabbah)
+# License
+![license badge](https://img.shields.io/badge/license-MIT-brightgreen)
 
-If you have questions about this application or general inquiry, please reach out to me via email: carlossabbah@hotmail.com
+# Contributing
+​Contributors: N/A
 
-## License
+# Tests
+N/A
 
-This project is covered under the MIT License.
-
-<img width="1640" alt="Previe" src="https://user-images.githubusercontent.com/91699101/178625203-986006e4-2c55-4518-963d-64d21ca73488.png">
-
+# Questions?
+## Please contact me:
+  * [My GitHub Profile](https://github.com/jcgom3)
+  * [My Github Project Repository](https://github.com/jcgom3/Challenge-21-MERN-Book-Search-Engine/tree/master)
+  * [My Github Deployed IO](https://jcgom3.github.io/Challenge-21-MERN-Book-Search-Engine/)
+  * Email us at: [Jcgom3@gmail.com](mailto:Jcgom3@gmail.com) with questions or make an issue about this project.
