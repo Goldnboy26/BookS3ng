@@ -1,34 +1,52 @@
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import SearchBooks from './pages/SearchBooks';
-import SavedBooks from './pages/SavedBooks';
-import Navbar from './components/Navbar';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import { setContext } from '@apollo/client/link/context';
+// import { ApolloProvider } from "@apollo/react-hooks";
+// import ApolloClient from "apollo-boost";
 
 import {
-  ApolloProvider,
   ApolloClient,
+  ApolloProvider,
   InMemoryCache,
   createHttpLink,
-} from '@apollo/client';
+} from "@apollo/client";
+
+import { setContext } from "@apollo/client/link/context";
+
+import SearchBooks from "./pages/SearchBooks";
+import SavedBooks from "./pages/SavedBooks";
+import Navbar from "./components/Navbar";
+import auth from "./utils/auth";
 
 const httpLink = createHttpLink({
-  uri: '/graphql',
+  uri: "/graphql",
 });
 
 const authLink = setContext((_, { headers }) => {
-  const token = localStorage.getItem('id_token');
+  // get the authentication token from local storage if it exists
+  const token = auth.getToken();
+  // return the headers to the context so httpLink can read them
   return {
     headers: {
       ...headers,
-      authorization: token ? `Bearer ${token}` : '',
+      authorization: token ? `Bearer ${token}` : "",
     },
   };
 });
 
+//establish apollo client
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
+
+  request: (operation) => {
+    const token = localStorage.getItem("id_token");
+
+    operation.setContext({
+      headers: {
+        authorization: token ? `Bearer ${token}` : "",
+      },
+    });
+  },
   cache: new InMemoryCache(),
 });
 

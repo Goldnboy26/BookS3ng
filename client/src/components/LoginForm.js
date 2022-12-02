@@ -1,41 +1,58 @@
-import React, { useState } from 'react';
-import { Form, Button, Alert } from 'react-bootstrap';
+// see SignupForm.js for comments
+import React, { useState } from "react";
+import { Form, Button, Alert } from "react-bootstrap";
+import Auth from "../utils/auth";
 
-import Auth from '../utils/auth';
-
-import { useMutation } from '@apollo/client';
-import { LOGIN_USER } from '../utils/mutations';
+// importing mutations
+import { useMutation } from "@apollo/react-hooks";
+import { LOGIN_USER } from "../utils/mutations";
 
 const LoginForm = () => {
+  const [userFormData, setUserFormData] = useState({ email: "", password: "" });
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
 
-  const [login, { error }] = useMutation(LOGIN_USER);
+  // initialize mutation
+  // const [loginUser, { error }] = useMutation(LOGIN_USER);
+  const [loginUser] = useMutation(LOGIN_USER);
 
-  // submit form
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setUserFormData({ ...userFormData, [name]: value });
+  };
+
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
-    try {
-      const { data } = await login({
-        variables: { ...formState },
-      });
-
-      Auth.login(data.login.token);
-    } catch (e) {
-      console.error(e);
+    // check if form has everything (as per react-bootstrap docs)
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
     }
-  };
 
-  const [formState, setFormState] = useState({ email: '', password: '' });
+    try {
+      const { data } = await loginUser({
+        variables: { ...userFormData },
+      });
+      Auth.login(data.login.token);
 
-  // update state based on form input changes
-  const handleChange = (event) => {
-    const { name, value } = event.target;
+      // if (!response.ok) {
+      //   throw new Error("something went wrong!");
+      // }
 
-    setFormState({
-      ...formState,
-      [name]: value,
+      // const { token, user } = await response.json();
+      // console.log(user);
+      // Auth.login(token);
+    } catch (err) {
+      console.error(err);
+      setShowAlert(true);
+    }
+
+    setUserFormData({
+      username: "",
+      email: "",
+      password: "",
     });
   };
 
@@ -56,8 +73,8 @@ const LoginForm = () => {
             type="text"
             placeholder="Your email"
             name="email"
-            value={formState.email}
-            onChange={handleChange}
+            onChange={handleInputChange}
+            value={userFormData.email}
             required
           />
           <Form.Control.Feedback type="invalid">
@@ -71,8 +88,8 @@ const LoginForm = () => {
             type="password"
             placeholder="Your password"
             name="password"
-            value={formState.password}
-            onChange={handleChange}
+            onChange={handleInputChange}
+            value={userFormData.password}
             required
           />
           <Form.Control.Feedback type="invalid">
@@ -80,13 +97,12 @@ const LoginForm = () => {
           </Form.Control.Feedback>
         </Form.Group>
         <Button
-          disabled={!(formState.email && formState.password)}
+          disabled={!(userFormData.email && userFormData.password)}
           type="submit"
           variant="success"
         >
           Submit
         </Button>
-        {error && <div>Login failed</div>}
       </Form>
     </>
   );
