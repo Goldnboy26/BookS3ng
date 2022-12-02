@@ -4,7 +4,7 @@
   "description": "21. MERN Challenge: Book Search Engine",
   "main": "server/server.js",
   "engines": {
-    "node": "12.11.1"
+    "node": "18.9.1"
     },
   "scripts": {
     "start": "server.js",
