@@ -1,81 +1,90 @@
-# mern-book-search - July 12th 2022 - Carlos Sabbah
+# Book-Search-Engine
+21. MERN Challenge: Book Search Engine
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+## Description 
+
+To take a fully functioning Google Books API search engine built with a RESTful API, and refactor it to be a GraphQL API built with Apollo Server. The app was built using the MERN stack, with a React front end, MongoDB database, and Node.js/Express.js server and API.
+
 
 ## Table of Contents
+* [License](#license)
+* [Installation](#installation)
+* [User Story](#user-story)
+* [Acceptance Criteria](#acceptance-criteria)
+* [Screenshots](#screenshots)
+* [Link](#link)
+* [Usage](#usage)
 
-- [Description](#Description)
-- [Installation](#Installation)
-- [Local Usage](#Local-Usage)
-- [Links](#Links)
-- [Questions](#Questions)
-- [License](#License)
+## License 
+This project is license under MIT ![Github licence](http://img.shields.io/badge/license-MIT-blue.svg)
 
-##
 
-## Description
+## Installation 
 
-This MERN stack application is a multi page book search engine that allows users to search up books, view their detailed information and save them (which they can view in the saved books page). Using Apollo Client, MongoDB and Mongoose, all transactions made are stored accordingly with high level authentication via tokens and JTW-decode to allow for secure access and unique data specific to each users.
+1. Clone the repository from GitHub
+1. Install `node.js`
+1. Run `npm install` to install dependencies. 
+1. `cd client` and then run `npm run build`
+1. Run `npm start` to start the web server and connect
 
-## Installation
+## User Story
 
-1. To install application, clone the main project via the HTTP or SSH link on github.
-
-```
-git clone
-```
-
-2. Once cloned, open the project folder in your text editor and run the following command in terminal to install all dependencies.
-   Important note - You will need to run the below command in the 'root', 'client' and 'server' directory paths.
-
-```
-npm install
-```
-
-## Local-Usage
-
-To view the application in your local browser, cd into the root directory path and run this in terminal:
+```md
+AS AN avid reader
+I WANT to search for new books to read
+SO THAT I can keep a list of books to purchase
 
 ```
-npm run develop
+
+
+## Acceptance Criteria
+
+```md
+GIVEN a book search engine
+WHEN I load the search engine
+THEN I am presented with a menu with the options Search for Books and Login/Signup and an input field to search for books and a submit button
+WHEN I click on the Search for Books menu option
+THEN I am presented with an input field to search for books and a submit button
+WHEN I am not logged in and enter a search term in the input field and click the submit button
+THEN I am presented with several search results, each featuring a book’s title, author, description, image, and a link to that book on the Google Books site
+WHEN I click on the Login/Signup menu option
+THEN a modal appears on the screen with a toggle between the option to log in or sign up
+WHEN the toggle is set to Signup
+THEN I am presented with three inputs for a username, an email address, and a password, and a signup button
+WHEN the toggle is set to Login
+THEN I am presented with two inputs for an email address and a password and login button
+WHEN I enter a valid email address and create a password and click on the signup button
+THEN my user account is created and I am logged in to the site
+WHEN I enter my account’s email address and password and click on the login button
+THEN I the modal closes and I am logged in to the site
+WHEN I am logged in to the site
+THEN the menu options change to Search for Books, an option to see my saved books, and Logout
+WHEN I am logged in and enter a search term in the input field and click the submit button
+THEN I am presented with several search results, each featuring a book’s title, author, description, image, and a link to that book on the Google Books site and a button to save a book to my account
+WHEN I click on the Save button on a book
+THEN that book’s information is saved to my account
+WHEN I click on the option to see my saved books
+THEN I am presented with all of the books I have saved to my account, each featuring the book’s title, author, description, image, and a link to that book on the Google Books site and a button to remove a book from my account
+WHEN I click on the Remove button on a book
+THEN that book is deleted from my saved books list
+WHEN I click on the Logout button
+THEN I am logged out of the site and presented with a menu with the options Search for Books and Login/ Signup and an input field to search for books and a submit button
+
 ```
 
-## Links
+## Screenshots 
 
-[Link to live application](https://boiling-hamlet-57856.herokuapp.com/)
+<img width="1347" alt="Screen Shot 2022-08-14 at 11 37 41 AM" src="https://user-images.githubusercontent.com/49573760/184550626-69294c36-6253-476e-8619-bd4cb1a5a106.png">
 
-## Built With
 
-- React
-- Apollo Client
-- GraphQL
-- Json web token
-- Jwt-decode
-- MongoDB
-- Mongoose
-- React-bootstrap
-- Bootstrap
-- Express
-- Node.js
-- Bcrypt
-- Faker
-- localStorage
-- JSX / JavaScript
-- HTML
-- CSS
 
-## Questions
 
-[My portfolio](https://csabbah.github.io/Carlos-Sabbah-portfolio/)
+## Link 
+<a href="https://enigmatic-ridge-01417.herokuapp.com/">Click Here</a>
 
-To view my other repositories:
-[Github](https://github.com/csabbah)
+## Usage 
 
-If you have questions about this application or general inquiry, please reach out to me via email: carlossabbah@hotmail.com
+To allow the user to search for books. The user will see 10 results display. The user should be able to sign in and login into the application. Logged in users can save books, and view a page of their saved book. User's can also remove books from their saved list. 
 
-## License
-
-This project is covered under the MIT License.
-
-<img width="1640" alt="Previe" src="https://user-images.githubusercontent.com/91699101/178625203-986006e4-2c55-4518-963d-64d21ca73488.png">
 
