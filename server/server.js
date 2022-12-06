@@ -11,7 +11,7 @@ const { authMiddleware } = require("./utils/auth");
 // const routes = require("./routes");
 
 // Express server
-const PORT = process.env.PORT || 9000;
+const PORT = process.env.PORT || 3001;
 
 // create a new Apollo server and pass in our schema data
 const server = new ApolloServer({
