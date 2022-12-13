@@ -1,7 +1,7 @@
 {
   "name": "book-search-engine",
   "version": "1.0.0",
-  "description": "21. MERN Challenge: Book Search Engine",
+  "description": "challenge 21 BookS3ng",
   "main": "server/server.js",
   "engines": {
     "node": "18.9.1"
