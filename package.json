@@ -14,15 +14,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Lemming97/Book-Search-Engine.git"
+    "url": "git+https://github.com/Goldnboy26/BookS3ng"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Lemming97/Book-Search-Engine/issues"
+    "url": "https://github.com/Goldnboy26/BookS3ng/issues"
   },
-  "homepage": "https://github.com/Lemming97/Book-Search-Engine#readme",
+  "homepage": "https://github.com/Goldnboy26/BookS3ng#readme",
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",
     "apollo-server-express": "^3.11.1",
