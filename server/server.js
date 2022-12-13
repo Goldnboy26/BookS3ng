@@ -8,7 +8,7 @@ const { typeDefs, resolvers } = require("./schemas");
 const db = require("./config/connection");
 const { authMiddleware } = require("./utils/auth");
 
-// const routes = require("./routes");
+const routes = require("./routes");
 
 // Express server
 const PORT = process.env.PORT || 3001;
@@ -30,7 +30,7 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../client/build")));
 }
-// app.use(routes);
+app.use(routes);
 
 // have to comment this code out to get the playground to load
 //add the build line in again
