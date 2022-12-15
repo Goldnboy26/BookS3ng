@@ -5,7 +5,7 @@
   "homepage": "build",
   "proxy": "http://localhost:3001",
   "dependencies": {
-  
+    "yarn": "^1.22.19"
   },
   "scripts": {
     "start": "react-scripts --openssl-legacy-provider start",
