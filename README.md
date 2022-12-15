@@ -1,61 +1,91 @@
-# MERN Book Search Engine 📚🔍
-
-![license badge](https://img.shields.io/badge/license-MIT-blue)
-
-## Description
-
-A full-stack Google Books API search engine built with a RESTful API, and refactored to be a GraphQL API with Apollo Server, This application was built using the MERN stack, and the following technologies:
-
-- MongoDB
-- Mongoose ODM
-- Express.js
-- React
-- React Router
-- Node.js
-- Apollo
-- GraphQL
-- Bootstrap
-- Javascript Web Token
-- Google Books API
-
-<br>
+# Book Search Engine
 
 ## Table of Contents
 
+- [Description](#description)
+- [Technology](#Technology)
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
-- [Deployed Link](#deployed-link)
-- [Questions](#questions)  
-  <br>
+- [Contribution](#contribution)
+- [Questions](#questions)
+
+## Description:
+
+This application allows users to search for new books from Google's Book API. Users can log in to save the book they would like to purchase, as well as to remove the books from their library.
+
+## Technology:
+
+Project is created with:
+
+- MongoDB
+- Express.js
+- React.js
+- Node.js
+- JavaScript
+- GraphQL API
+- Apollo Server
 
 ## Installation
 
-Use the following command to download dependencies for the project:
+To run this project, install it locally using npm:
 
 ```
 npm install
 ```
 
-  <br>
-
 ## Usage
 
-![Screenshot](./client/src/assets/screenshot.png)
+After installing npm packages, the application will be invoked by using the following command:
 
-The MERN Book Search Engine allows user's to search for a book using the Google Books API. The results are returned with an image, book title, authors, and a description. If a user is signed up and logged in, the user is able to save the book. In the user's saved book page, the user can also remove the books that they've saved.
+```
+npm run develop
+```
 
- <br>
+#### Heroku Deployment
+
+[Click me to see app!](https://book-search-engine-2022.herokuapp.com/)
+
+- Create heroku app
+
+  ```
+  heroku create
+  ```
+
+- Create database on MongoDB Atlas:
+
+  ```
+  Cluster ➡️ Collections ➡️ Create Database
+  ```
+
+- Change Heroku setting
+
+  ```
+  Config Vars ➡️ KEY: MONGODB_URI ➡️ VALUE: (from Cluster connect, change password and database name)
+  ```
+
+- Git push
+  ```
+  git push heroku main
+  heroku open
+  ```
+
+#### App Screenshot
+
+![Screenshot](/client/public/GBS.png)
 
 ## License
 
-This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).  
- </br>
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) <br>
+This project is licensed under MIT, for more information please visit [this website](https://opensource.org/licenses/MIT)
 
-## Deployed Link
+## Contribution
 
-https://agile-beach-08478.herokuapp.com/
+Made by Wenwen Tian
 
-## Questions
+## Questions?
 
-[GitHub](https://github.com/dneflas)
+Please feel free to contact me if you need any further information:
+
+- [Email](mailto:wwtian9@gmail.com)
+- [Github Profile](https://github.com/joce1ynn)
