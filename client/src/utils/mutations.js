@@ -1,43 +1,40 @@
-import gql from "graphql-tag";
+import { gql } from "@apollo/client";
 
-// mutation for logged in user
 export const LOGIN_USER = gql`
-  mutation loginUser($email: String!, $password: String!) {
+  mutation login($email: String!, $password: String!) {
     login(email: $email, password: $password) {
       token
       user {
-        _id
+        id
         username
         email
         bookCount
         savedBooks {
           bookId
-          title
-          description
           authors
-          link
+          description
+          title
           image
+          link
         }
       }
     }
   }
 `;
-
-// mutation to add user
 export const ADD_USER = gql`
   mutation addUser($username: String!, $email: String!, $password: String!) {
     addUser(username: $username, email: $email, password: $password) {
       token
       user {
-        _id
+        id
         username
         email
         bookCount
         savedBooks {
           bookId
-          title
-          description
           authors
+          description
+          title
           image
           link
         }
@@ -45,40 +42,37 @@ export const ADD_USER = gql`
     }
   }
 `;
-
-// mutation to save books
 export const SAVE_BOOK = gql`
-  mutation SaveBook($book: BookInput) {
-    saveBook(book: $book) {
-      _id
-      username
-      email
-      savedBooks {
-        bookId
-        authors
-        image
-        description
-        title
-        link
-      }
-    }
-  }
-`;
-
-// mutation to remove books
-export const REMOVE_BOOK = gql`
-  mutation removeBook($bookId: String!) {
-    removeBook(bookId: $bookId) {
-      _id
+  mutation saveBook($input: BookInput) {
+    saveBook(input: $input) {
+      id
       username
       email
       bookCount
       savedBooks {
         bookId
         authors
-        image
         description
         title
+        image
+        link
+      }
+    }
+  }
+`;
+export const REMOVE_BOOK = gql`
+  mutation removeBook($bookId: ID!) {
+    removeBook(bookId: $bookId) {
+      id
+      username
+      email
+      bookCount
+      savedBooks {
+        bookId
+        authors
+        description
+        title
+        image
         link
       }
     }
