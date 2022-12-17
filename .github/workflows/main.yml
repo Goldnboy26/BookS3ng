@@ -12,6 +12,6 @@ jobs:
       - uses: actions/checkout@v2
       - uses: akhileshns/heroku-deploy@v3.12.11
         with:
-          heroku_api_key: ${{3a419cdb-49d3-4e8e-a937-ae2b72e424a8}}
+          heroku_api_key: ${{secrets.Heroku_API_KEY}}
           heroku_app_name: "BookS3ng"
           heroku_email: "enrique.monje1994@yahoo.com"
