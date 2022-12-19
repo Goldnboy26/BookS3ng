@@ -21,12 +21,13 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '../client/build')));
 
 //connect front-end build with backend//
-app.get('/*', (req, res) => {
+app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
 db.once('open', () => {
-  app.listen({ port: 3001 }, () =>
-     console.log('Now browse to http://localhost:4000' + server.graphqlPath)
- )
-})
+  app.listen(PORT, () => {
+    console.log(`🌍 Now listening on localhost:${PORT}`);
+    console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
+  });
+});
