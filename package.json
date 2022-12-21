@@ -19,7 +19,7 @@
     "and": "^0.0.3",
     "http-proxy-middleware": "^2.0.6",
     "node": "^16.17.0",
-    "npm": "^9.2.0",
+    "npm": "^8.15.0",
     "start": "^5.1.0"
   },
   "engines": {
