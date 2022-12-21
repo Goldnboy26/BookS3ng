@@ -7,7 +7,7 @@ var db = require('./config/connection');
 
 
 
-var PORT = process.env.PORT || 3007;
+var PORT = process.env.PORT || 3001;
 var app = express();
 
 var server = new ApolloServer({
