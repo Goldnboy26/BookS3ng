@@ -41,7 +41,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route 
-            path='/search' 
+            path='/' 
             element={<SearchBooks />} 
           />
           <Route 
